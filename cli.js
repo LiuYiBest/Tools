@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 const program = require('commander');
 const api = require('./index.js')
 
