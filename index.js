@@ -7,7 +7,6 @@ const dbPath = p.join(home,'.todo')
 module.exports.add=(title)=>{
     // 读取之前的任务
     fs.readFile(dbPath,{flag: 'a+'},(error, data)=>{
-        console.log('11')
         if(error){console.log(error)}else{
             let list
             try{
@@ -21,8 +20,8 @@ module.exports.add=(title)=>{
                 done: false
             }
             list.push(task)
-            const  string =JSON.parse(list)
-            fs.writeFile(dbPath,string,(error3)=>{
+            const string =JSON.stringify(list)
+            fs.writeFile(dbPath,string+'\n',(error3)=>{
                 if(error){console.log(error3)}
             })
         }
