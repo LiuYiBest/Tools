@@ -6,6 +6,11 @@ const dbPath = p.join(home,'.todo')
 
 module.exports.add=(title)=>{
     // 读取之前的任务
+    const list = db.read()
+    //往里面添加一个title任务
+    list.push()
+    //存储任务到文件
+
     fs.readFile(dbPath,{flag: 'a+'},(error, data)=>{
         if(error){console.log(error)}else{
             let list
@@ -26,7 +31,7 @@ module.exports.add=(title)=>{
             })
         }
     })
-    //往里面添加一个title任务
+
 }
 
 
