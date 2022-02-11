@@ -1,4 +1,5 @@
 const program = require('commander');
+const api = require('./index.js')
 
 program
     .option('-x, --xxx', 'the xxx')
@@ -9,6 +10,7 @@ program
     .description('添加一个任务')
     .action((...args) => {
         let  words = args.slice(0,-1).join(' ')
+        api.add(words)
         console.log(words);
     });
 //删除任务

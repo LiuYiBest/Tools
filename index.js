@@ -1,3 +1,3 @@
-module.exports.add=()=>{
-    console.log('111')
+module.exports.add=(title)=>{
+    console.log('add 111')
 }
