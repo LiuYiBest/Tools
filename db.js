@@ -4,16 +4,13 @@ const p = require('path')
 const fs = require('fs')
 const dbPath = p.join(home,'.todo')
 
-
 const db={
-
     read(path = dbPath){
         return new Promise((resolve,reject)=>{
             fs.readFile(dbPath,{flag: 'a+'},(error, data)=>{
-                if(error){
-                    console.log(error)
-                    reject(error)
-                }else{
+                if(error) {
+                    return reject(error)
+                }
                     let list
                     try{
                         let list = JSON.parse(data.toString())
@@ -21,7 +18,6 @@ const db={
                         list = []
                     }
                     resolve(list)
-                }
             })
         })
     },
@@ -34,13 +30,5 @@ const db={
             })
         })
     }
-
-    // console.log(list)
-    // const task = {
-    //     title:title,
-    //     done: false
-    // }
-    // list.push(task)
-
 }
 module.exports = db
