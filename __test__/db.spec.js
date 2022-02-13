@@ -1,4 +1,5 @@
 const db = require('../db')
+jest.mock('fs')
 
 describe('db',()=>{
     it('read',()=>{
@@ -6,3 +7,5 @@ describe('db',()=>{
     })
     it('read',()=>{})
 })
+
+
