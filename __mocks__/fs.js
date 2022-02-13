@@ -1,8 +1,8 @@
 
 const fs = jest.createMockFromModule('fs');
-fs.x=()=>{
+
+fs.setMock =(path,error,data)=>{
     console.log('hi')
-    return 'xxx'
 }
 
 
