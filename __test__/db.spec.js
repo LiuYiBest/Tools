@@ -1,4 +1,5 @@
 const db = require('../db')
+const fs = require('fs')
 jest.mock('fs')
 
 describe('db',()=>{
